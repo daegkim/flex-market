@@ -1,0 +1,6 @@
+[submodule "flex-market-api"]
+	path = flex-market-api
+	url = https://github.com/daegkim/flex-market-api.git
+[submodule "flex-market-react"]
+	path = flex-market-react
+	url = https://github.com/daegkim/flex-market-react.git
