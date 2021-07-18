@@ -4,3 +4,6 @@
 [submodule "flex-market-react"]
 	path = flex-market-react
 	url = https://github.com/daegkim/flex-market-react.git
+[submodule "flex-market-account-api"]
+	path = flex-market-account-api
+	url = https://github.com/daegkim/flex-market-account-api.git
