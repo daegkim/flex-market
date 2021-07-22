@@ -7,3 +7,6 @@
 [submodule "flex-market-account-api"]
 	path = flex-market-account-api
 	url = https://github.com/daegkim/flex-market-account-api.git
+[submodule "flex-market-order-api"]
+	path = flex-market-order-api
+	url = https://github.com/daegkim/flex-market-order-api.git
