@@ -1,0 +1,40 @@
+## 1. Azure Setting
+### 가상머신 연결
+- ssh -i ~/Downloads/flex-market-key.cer daegeunkim@52.141.59.17
+### 리눅스 세팅
+- Git 
+  - sudo apt-get install git
+- Jenkins
+  - 출처 : https://imbf.github.io/devops/2020/11/26/Install-Jenkins-in-Ubuntu(18.04).html
+  - wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+  - sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \/etc/apt/sources.list.d/jenkins.list'
+  - sudo apt-get update
+  - sudo apt-get install jenkins
+  - sudo apt-get install openjdk-8-jdk
+  - sudo systemctl start jenkins
+  - sudo systemctl status jenkins
+  - sudo vi /etc/default/jenkins
+    - HTTP_PORT = 9090
+  - sudo systemctl restart jenkins
+  - 젠킨스 실행 후 폴더에 있는 값을 입력
+    - cd /var/lib/jenkins/secrets/initialAdminPassword
+    - 현재 계정 권한으로는 해당 폴더에 들어갈 수 없음
+    - jenkins/secrets 디렉토리의 권한
+      - drwx------ jenkins jenkins
+        - d rwx --- --- jenkins jenkins
+        - d : directory를 의미
+        - rwx : 주인은 read write excute가능
+        - --- : 그룹은 아무것도 불가능
+        - --- : 모든 인원은 아무것도 불가능
+        - jenkins : 주인은 jenkins
+        - jenkins : 그룹이 jenkins
+    - 내 계정을 jenkins라는 그룹에 속하게 하고 secrets에 그룹 권한 부여
+    - su - root
+    - cd /var/lib/jenkins
+    - chmod g+rwx secrets
+    - usermod -g jenkins daegeunkim
+    - su - daegeunkim
+    - vi /var/lib/jenkins/secrets/initialAdminPassword
+- nodejs
+  - sudo apt install nodejs
+  - sudo apt install npm
